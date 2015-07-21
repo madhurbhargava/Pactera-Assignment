@@ -20,7 +20,11 @@ Should not block UI when loading the data from the json feed.
 App Design:
 
 A.) App uses GSON Library to ingest a json from https://dl.dropboxusercontent.com/u/746330/facts.json. 
+
 B.) The parsed JSON is converted to following class objects: FactsData.java(The JSON Itself), FactsListObject.java(Individual row item in JSON).
+
 C.) List is fetched via ListFetcher.java which is a Async task. ListFetcher relies on LisatDataFetchListener.java to communicate with UI(MainActivity.java).
+
 D.) ListItemAdapter.java  is respponsible for loading data into ListView. Images are loaded lazily in getView() method via BitmapDownloader.
+
 E.) Refresh Button is present under Menu.
